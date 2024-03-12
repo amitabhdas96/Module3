@@ -1,4 +1,4 @@
-var test = function () {
+ function bbgame1() {
   var score = 0;
 
   var freeThrow = function () {
@@ -28,5 +28,5 @@ var test = function () {
   };
 };
 
-var basketballGame = test();
+var basketballGame = new bbgame1();
 basketballGame.basket().freeThrow().freeThrow().basket().threePointer().halfTime();
