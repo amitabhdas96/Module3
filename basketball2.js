@@ -1,23 +1,32 @@
-const basketballGame = {
-    score:0,
-    freeThrow: function () {
-        this.score++;
-        return this;
-      },
+var test = function () {
+  var score = 0;
 
-    basket: function () {
-        this.score += 2;
-        return this;
-      },
+  var freeThrow = function () {
+    score++;
+    return this;
+  };
 
-    threePointer: function () {
-        this.score += 3;
-        return this;
-      },
+  var basket = function () {
+    score += 2;
+    return this;
+  };
 
-    halfTime: function () {
-        console.log('Halftime score is '+this.score);
-      }
-  }
+  var threePointer = function () {
+    score += 3;
+    return this;
+  };
 
+  var halfTime = function () {
+    console.log("Halftime score is " + score);
+  };
+
+  return {
+    freeThrow: freeThrow,
+    basket: basket,
+    threePointer: threePointer,
+    halfTime: halfTime,
+  };
+};
+
+var basketballGame = test();
 basketballGame.basket().freeThrow().freeThrow().basket().threePointer().halfTime();
